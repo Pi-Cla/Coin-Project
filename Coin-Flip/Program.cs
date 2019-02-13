@@ -8,6 +8,7 @@ namespace Coin_Flip
         {
             int coin;
             string userGuess;
+            string coinDescription;
             Random rng = new Random();
 
             //Query the user
@@ -16,18 +17,16 @@ namespace Coin_Flip
 
             //get a random number for the coin flip
             coin = rng.Next(0,2);
-
-            if (coin == 0 && userGuess == "T"){
-                Console.WriteLine("The coin flip was Tails, you win!");
-            } else if (coin == 1 && userGuess == "H"){
-                Console.WriteLine("The coinf lip was Heads, you win!");
+            if (coin == 1){
+                coinDescription= "Heads";
             } else {
-                if (coin == 0){
-                    Console.WriteLine("The coin flip was Tails, you lose!");
-                } else {
-                    Console.WriteLine("The coin flip was Heads, you lose!");
-                }
+                coinDescription= "Tails";
             }
+            if ((coin == 0 && userGuess == "T") || coin == 1 && userGuess == "H"){
+                Console.WriteLine("The coin flip was {0}, you win!", coinDescription);
+            } else {
+                    Console.WriteLine("The coin flip was {0}, you lose!", coinDescription);
+                }
         }
     }
 }
