@@ -6,6 +6,7 @@ namespace Coin_Flip
     {
         static void Main(string[] args)
         {
+            while(true){
             int coin;
             string userGuess;
             string coinDescription;
@@ -27,6 +28,7 @@ namespace Coin_Flip
             } else {
                     Console.WriteLine("The coin flip was {0}, you lose!", coinDescription);
                 }
+            }
         }
     }
 }
